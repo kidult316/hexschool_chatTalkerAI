@@ -1,0 +1,379 @@
+//import
+@import "reset";
+@import "variable";
+@import "share";
+
+// Background
+html, body {
+    background: url(../img/img.svg) no-repeat;
+    background-position: top 0 right 0;
+    position: relative;
+
+    @include mobile {
+        background: url(../img/banner_sm.svg) no-repeat;
+        background-position: top 72px right 0;
+    }
+}
+
+.bg {
+    background-color: $primary-variant;
+    border-radius: 0 0 0 300px;
+    height: 470px;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    
+    @include mobile {
+        height: 495px;
+        top: 72px
+    }
+}
+
+
+//  計費方式說明 
+
+.banner {
+    padding: 62px 0 180px 0;
+    margin-bottom: 100px;
+
+    @include mobile {
+        padding-top: 16px;
+        padding-bottom: 321px;
+    }
+
+    p {
+        line-height: 24px;
+    }
+}
+
+// 彈性選擇，提供您選擇最適合的方案 
+
+.plan {
+    text-align: center;
+    position: relative;
+
+    h3 {
+        margin-bottom: 48px;
+
+        @include mobile{
+            margin-bottom: 24px;
+        }
+    }
+
+    .pricelist {
+        display: flex; 
+        margin-bottom: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include mobile {
+            overflow: auto;
+            white-space: nowrap;
+            flex-wrap: nowrap;
+            justify-content: start;
+            margin-right: -20px;
+            margin-left: -3px;
+            margin-bottom: 8px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        @include pad {
+            overflow: auto;
+            white-space: nowrap;
+            flex-wrap: nowrap;
+            justify-content: start;
+            margin-right: -20px;
+            margin-left: -3px;
+            margin-bottom: 8px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        button {
+            background-color: $white;
+            border: 1px solid $primary;
+            border-radius: 27px;
+            color: $primary;
+            cursor: pointer;
+            display: block;
+            font-family: $cft;
+            font-size: 18px;
+            line-height: 26px;
+            padding: 12px 32px;
+            margin: 0 8px 24px 8px;
+
+            @include mobile {
+                margin-right: 3px;
+                margin-left: 3px;
+                font-size: 16px;
+                line-height: 24px;
+                padding: 8px 16px;
+            }
+
+            &:hover {
+                border: 1px solid $primary;
+                background-color: lighten($primary, 10%);
+                color: $white;
+            }
+
+            &:focus {
+                background-color: $primary;
+                color: $white;
+            }
+
+            &.active {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+
+    }
+
+    .planlist {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        li {
+            background-color: $white;
+        }
+
+
+        li.basic, li.standard {
+            border-radius: 12px;
+            box-shadow: $shadow;
+            margin: 0 8px 50px 8px;
+            padding: 16px 0 32px 0 ;
+
+            @include mobile {
+                margin: 0 0 24px 0;
+                padding-bottom: 24px;
+            }
+
+            h4 {
+                border-bottom: $bd-base;
+                display: block;
+                font-size: 24px;
+                line-height: 35px;
+                margin-bottom: 32px;
+                padding-bottom: 16px;
+                width: 444px;
+
+                @include mobile {
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
+                
+            }
+
+            p {
+                line-height: 24px;
+            }
+
+            .model {
+                padding: 32px 24px 32px 24px;
+
+                @include mobile {
+                    padding: 24px 16px
+                }
+
+                h5 {
+                    line-height: 17px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-size: 29px;
+                    line-height: 42px;
+
+                    @include mobile {
+                        font-size: 24px;
+                        line-height: 35px;
+                    }
+            
+                }
+
+                .sub, .fee {
+                    background-color: $bg-gr;
+                    text-align: center;
+                    border-radius: 12px;
+                    padding: 24px 0;
+                    width: 169px;
+
+                    @include mobile {
+                        padding: 16px 0;
+                        width: 139px;
+                    }
+                }
+
+                .sub > p, .fee > p {
+                    font-family: $cft;
+                    font-size: 32px;
+                    line-height: 35px;
+
+                    @include mobile {
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                } 
+
+                .sub > p > span, .fee > p > span {
+                    font-size: 12px;
+                    font-weight: bold;
+                    line-height: 17px;
+                }
+
+                .sub > p, .sub > p > span{
+                    color: $primary;
+                }
+            }
+
+            .feature {
+                padding: 0 24px;
+
+                @include mobile {
+                    padding: 0 16px;
+                }
+
+                li{
+                    display: flex;
+                    text-align: left;
+                    align-items: center;
+                    margin-bottom: 16px;
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+
+                    @include mobile {
+                        align-items: baseline;
+                    }
+                }
+
+                span {
+                    margin-right: 12px; 
+                    
+                    @include mobile {
+                        margin-right: 16px;
+
+                        img {
+                            display: block;
+                            width: 16px;
+                            height: 14px;
+                        }
+                        
+                    }
+                }
+    
+            }
+            
+            .pricingbtn-g {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .bg-ball {
+        background-image: url(../img/Ellipse_4.svg);
+        width: 361px;
+        height: 361px;
+        position: absolute;
+        top: 35%;
+        left: -20%;
+        z-index: -1;
+    }
+}
+
+// 常見問題
+.faq {
+    margin: 50px auto 0 auto;
+
+    @include mobile {
+        margin-top: 26px;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 48px;
+
+        @include mobile {
+            margin-bottom: 32px;
+        }
+    }
+
+    .questions {
+        margin: 0 auto 100px auto;
+        max-width: 904px;
+
+        @include mobile {
+            margin-bottom: 60px;
+        }
+
+        li {
+            border-radius: 12px;
+            box-shadow: $shadow;
+            margin-bottom: 16px;
+            padding: 8px 32px;
+
+            @include mobile {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            &:last-child > a > .question > p {
+                color: $primary;
+                font-weight: bold;
+            }
+
+            .answer > p {
+                color: $text-gr;
+                font-size: 16px;
+                line-height: 32px;
+            }
+
+            .question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 0 8px 0;
+
+                @include mobile {
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 28px;
+
+                @include mobile {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+            .answer{
+                padding: 16px 0 16px 0;
+
+                @include mobile {
+                    padding: 8px 0 8px 0;
+                }
+            }
+
+        }
+    }
+
+}
+

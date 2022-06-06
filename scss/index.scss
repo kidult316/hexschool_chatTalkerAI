@@ -1,0 +1,531 @@
+//import
+@import "reset";
+@import "variable";
+@import "share";
+
+// Background
+html, body {
+    background-image: url(../img/bg_yellow.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 right 0;
+}
+
+@include pad {
+    html, body {
+        background-image: none
+    }
+}
+
+// 你愛我像誰？ 扮演什麼角色我都會
+.banner {
+    position: relative;
+
+    @include pad {
+        background-image: url(../img/mobile_bg_yellow@2x.png);
+        background-repeat: no-repeat;
+        background-position: top 50% right 50%;
+    }
+
+    @include mobile {
+        background-image: url(../img/mobile_bg_yellow.png);
+        background-repeat: no-repeat;
+        background-position: bottom 0 right 50%;
+    }
+
+    .slogan > p:first-child {
+        color: $primary;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 26px;
+        margin-bottom: 8px;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .slogan > p:last-child {
+        font-size: 20px;
+        line-height: 29px;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 32px; 
+        }
+    }
+
+    .keyvisual {
+        background-image: url(../img/home.svg);
+        background-repeat: no-repeat;
+        width: 532px;
+        height: 534PX;
+
+        @include pad {
+            width: 304px;
+            height: 305PX;
+            margin: 0 auto;
+        } 
+
+        @include mobile {
+            width: 304px;
+            height: 305PX;
+            margin: 0 auto;
+        }
+    }
+
+    .bg-ball {
+        background: url(../img/Ellipse_3.svg) no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 87%;
+        left: -18%;
+        z-index: -1;
+
+        @include pad {
+            background-image: none; 
+        }
+
+        @include mobile {
+            background-image: none; 
+        }
+    }
+}
+
+// 三大平台，我來搞定
+.platform {
+    margin-bottom: 50px;
+    position: relative;
+
+    @include mobile {
+        margin-bottom: 36px;
+    }
+
+    h3 {
+        margin-top: 215px;
+        margin-bottom: 48px;
+        text-align: center;
+
+        @include mobile {
+            margin-top: 60px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .sns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -16px;
+
+        @include mobile {
+            justify-content: center;
+        }
+
+        li {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 0 16px;
+
+            img {
+                display: block;
+            }
+
+            h4 {
+                font-size: 24px;
+                line-height: 35px;
+                margin: 24px 0;
+            }
+
+            p {
+                color: $text-gr;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+
+        @include mobile {
+            li {
+                margin-bottom: 24px;
+            }
+
+            li > img {
+                width: 60px;
+                height: 60px;
+            }
+
+            li > h4 {
+                font-size: 18px;
+                line-height: 26px;
+                margin: 16px 0;
+            }
+
+        }
+    }
+
+    .bg-ball {
+        @include mobile {
+            background-image: url(../img/Ellipse_3.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 126px;
+            height: 126px;
+            top: 3%;
+            left: -20%;
+            z-index: -1;
+        }
+    }
+}
+
+// 任何的角色，我都能給
+.users {
+    position: relative;
+    text-align: center;
+    padding-bottom: 100px;
+
+    @include mobile {
+        padding-bottom: 60px;
+    }
+    
+    h3 {
+        margin-bottom: 16px;
+    }
+
+    .slogan {
+        font-size: 20px;
+        line-height: 29px;
+        margin-bottom: 40px;
+
+        @include mobile {
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .userlist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -8px -8px -8px;
+
+        @include mobile {
+            justify-content: center;
+            margin: 0 0 -12px 0;
+        }
+
+
+        li {
+            background-color: $white;
+            border-radius: 12px;
+            box-shadow: $shadow;
+            max-width: 260px;
+            // max-width: 25%;
+            margin: 8px 8px;
+
+            h4 {
+                color: $primary;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 24px;
+                margin-top: 16px;
+            }
+
+            p {
+                display: block;
+                line-height: 26px;
+                padding: 16px 16px 24px 16px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        @include mobile {
+            li {
+                margin: 12px 0;
+            }
+        }
+    }
+
+    .bg-ball {        
+        position: absolute;
+        background-image: url(../img/Ellipse_18.svg);
+        width: 250px;
+        height: 310px;
+        bottom: -15%;
+        right: 0;
+        z-index: -1;
+
+        @include mobile {
+            background-size: cover;
+            background-repeat: no-repeat;
+            bottom: 1%;
+            right: 0;
+            width: 88px;
+            height: 135px;
+        }
+    }
+}
+
+// 快速了解客戶輪廓 建立品牌流量池
+.features {
+    margin-bottom: 100px;
+
+    @include mobile {
+        margin-bottom: 60px;
+    }
+
+    .container{
+        padding-right: 49px;
+
+        @include mobile {
+            padding: 0 20px;
+        }
+    }
+
+    .rowbox {
+        flex-direction: row-reverse;
+    }    
+
+    .slogn {
+        margin-bottom: 32px;
+
+        @include mobile {
+            text-align: center;
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .ftlist {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 507px;
+        justify-content: space-between;
+        margin: -14px 0;
+
+        @include mobile {
+            justify-content: center;
+            margin: -12px 0;
+        }
+
+        li {
+            background-color: $white;
+            border-radius: 12px;
+            box-shadow: $shadow;
+            width: 230px;
+            // width: 46%;
+            padding: 32px 32px 48px 32px;
+            margin: 14px 0;
+
+            @include mobile {
+                margin: 12px 0;
+            }
+            
+            .circle {
+                background-color: $white;
+                border-radius: 100px;
+                box-shadow: $shadow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 86px;
+                height: 86px;
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 26px;
+                margin: 24px 0 16px 0;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    p {
+        display: block;
+        font-size: 18px;
+        line-height: 26px;
+        margin-top: 16px;
+    }
+
+    .pricingbtn-g {
+        margin-top: 24px;
+
+        @include mobile {
+            margin-top: 16px;
+        }
+    }
+}
+
+// 好評如潮
+.reviews{
+    margin-bottom: 100px;
+    position: relative;
+
+    @include mobile {
+        margin-bottom: 60px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .rvlist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -8px 0 -8px;
+
+        @include mobile {
+            justify-content: center;
+
+            li:nth-child(n+2) {
+                display: none;
+            }
+        }
+
+        li {
+            background-color: $white;
+            border-radius: 12px;
+            box-shadow: $shadow;
+            max-width: 352px;
+            // width: 31.5%;
+            margin: 106px 8px 24px 8px;
+            padding: 48px 32px 24px 32px;
+            position: relative;
+
+            @include mobile {
+                margin-top: 88px
+            }
+
+            .photo {
+                border-radius: 100px;
+                box-shadow: $shadow;
+                position: absolute;
+                top: -25%;
+                width: 80px;
+            }
+
+            p {
+                line-height: 24px;
+                margin-bottom: 16px;
+            }
+
+            h4 {
+                border-top: $bd-base;
+                font-weight: bold;
+                line-height: 24px;
+                margin-bottom: 8px;
+                padding-top: 16px;
+            }
+
+            .inforow {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .inforow > p {
+                margin: 0;
+            }
+            
+            .rating > img {
+                height: 16px;
+                margin-right: 4px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+
+        li  {
+            background-color: $gr;
+            border-radius: 50px;
+            display: block;
+            height: 10px;
+            margin: 0 4px;
+            width: 10px;
+
+            &:last-child {
+                background-color: $secondary;
+                    width: 16px;
+            }
+        }  
+    }
+
+    .bg-ball {
+        background-image: url(../img/Ellipse_19.svg);
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        left: 5%;
+        top: 10%;
+        z-index: -1;
+
+        @include mobile {
+            background-size: cover;
+            left: -20%;
+            top: 9%;
+            width: 153px;
+            height: 153px;
+        }
+    }
+}
+
+// 美好用戶體驗，從對話開始
+.experience {
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    max-width: 100%;
+    text-align: center;
+
+    @include mobile {
+        background-image: url(../img/footer_sm.svg);
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    h3 {
+        padding-top: 260px;
+        margin-bottom: 48px;
+
+        @include mobile {
+            padding-top: 293px;
+            font-size: 24px;
+            line-height: 35px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .pricingbtn-g {
+        margin-bottom: 100px;
+
+        @include mobile {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+

@@ -1,0 +1,45 @@
+// * {
+//     font-family: 'Comfortaa', cursive;
+//     font-family: 'Noto Sans TC', sans-serif;
+//     font-family: 'Wendy One', sans-serif;
+// }
+
+
+// font-family
+$wo: 'Wendy One', sans-serif;
+$cft: 'Comfortaa';
+$nts: 'Noto Sans TC', sans-serif;
+
+// color
+$primary: #56C4C5;
+$primary-variant: #F7F9FD;
+$secondary: #FFD153;
+$secondary-variant: #F5CA52;
+$accent: #FF5D50;
+$white: #fff;
+$text-bk: #221E1F;
+$text-gr: #747474;
+$bg-gr: #F5F5F5;
+$gr:#DDDDDD;
+
+//effect
+$shadow: 0px 2px 10px #00000014;
+$bd-base: 1px solid #DDDDDD;
+$bd-primary: 1px solid #56C4C5;
+
+// spacing
+$mx-w: 1120px;
+
+
+//RWD
+
+@mixin pad{
+    @media(max-width:768px){
+      @content;
+    }
+  }
+  @mixin mobile{
+    @media(max-width:414px){
+      @content;
+    }
+  }

@@ -1,0 +1,162 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    color: $text-bk;
+    font-family: $nts;
+}
+
+html, body{
+    scroll-behavior: smooth; 
+    position: relative;
+    
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+// wrap
+.container {
+    margin: 0 auto;
+    max-width: $mx-w;
+    padding: 0 16px;
+
+    @include pad {
+        margin: 0 auto;
+        max-width: 768px;
+        padding: 0 20px;
+    }
+
+}
+
+.rowbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+// Navigation Bar
+nav {  
+    margin-bottom: 30px;
+
+    .logo {
+        display: block;
+        height: 40px;
+        margin: 24px 0;
+    }
+
+    @include pad {
+        background-color: $white;
+        border-bottom: $secondary 2px solid;
+
+    }
+    
+    @include mobile {
+        background-color: $white;
+        border-bottom: $secondary 2px solid;
+        margin-bottom: 32px;
+
+        .logo {
+            height: 24px;
+        }
+    }
+}
+
+// title
+h2 {
+    color: $text-bk;
+    display: block;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 70px;
+    margin-bottom: 16px;
+
+    @include mobile {
+        font-size: 32px;
+        line-height: 46px;
+    }
+}
+
+
+h3 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 46px;
+
+    @include mobile {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+
+// button
+.pricingbtn {
+    background-color: $accent;
+    border-radius: 22px;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 32px;  
+
+    &:hover {
+        background-color: lighten($accent, 5%);
+    }
+}
+
+.pricingbtn-g {
+    background-color: $primary;
+    border-radius: 27px;
+    color: $white;
+    display: inline-block;
+    font-family: $cft;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 12px 32px;
+
+    &:hover {
+        background-color: lighten($primary, 5%);
+    }
+}
+
+// Footer
+.footer {
+    background-color: $bg-gr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+}
+
+//Back to Top
+.top {
+    background-color: $primary;
+    border-radius: 100px;
+    color: $white;
+    font-family: $wo;
+    font-size: 18px;
+    line-height: 19px;
+    padding: 26px 17px;
+    position: fixed;
+    right: 48px;
+    bottom: 46px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: lighten($primary, 5%);
+    }
+
+    @include mobile {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 18px 10px 18px 11px;
+        right: 16px;
+    }
+}
