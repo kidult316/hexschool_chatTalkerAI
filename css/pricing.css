@@ -305,24 +305,6 @@ html, body {
       flex-wrap: wrap;
 }
 
-@media (max-width: 414px) {
-  .plan .pricelist {
-    overflow: auto;
-    white-space: nowrap;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    margin-right: -20px;
-    margin-left: -3px;
-    margin-bottom: 8px;
-  }
-  .plan .pricelist::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .plan .pricelist {
     overflow: auto;
@@ -332,9 +314,27 @@ html, body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    margin-right: -20px;
-    margin-left: -3px;
-    margin-bottom: 8px;
+    margin: 0 -20px 8px -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .plan .pricelist::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .plan .pricelist {
+    overflow: auto;
+    white-space: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    margin: 0 -20px 8px -20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .plan .pricelist::-webkit-scrollbar {
     display: none;
